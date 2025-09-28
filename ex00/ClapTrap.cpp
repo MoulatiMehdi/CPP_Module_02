@@ -11,7 +11,7 @@
 
 ClapTrap::ClapTrap() : _name(""), _health(10), _energy(10), _attack(0)
 {
-    std::cout << "default constructor called" << std::endl;
+    std::cout << "Default Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
@@ -63,31 +63,55 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 void ClapTrap::attack(const std::string &target)
 {
-    if (_energy == 0 || _health == 0)
+    if (_health == 0)
+    {
+        std::cout << "ClapTrap " << _name << " can't attack : already dead"
+                  << std::endl;
         return;
+    }
+    if (_energy == 0)
+    {
+        std::cout << "ClapTrap " << _name << " can't attack : no enery point"
+                  << std::endl;
+        return;
+    }
     _energy -= 1;
     std::cout << "ClapTrap " << _name << " attacks " << target << ", causing "
-              << _attack << "points of damage!" << std::endl;
+              << _attack << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_health == 0)
+    {
+        std::cout << "ClapTrap " << _name << " can't take damage : already dead"
+                  << std::endl;
         return;
+    }
     if (_health > amount)
         _health -= amount;
     else
         _health = 0;
-    std::cout << "ClapTrap " << _name << " has been attacked and lost "
-              << amount << "points of health!" << std::endl;
+    std::cout << "ClapTrap " << _name << " has been attacked , losing " << amount
+              << " points of health!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_energy == 0 || _health == 0)
+    if (_health == 0)
+    {
+        std::cout << "ClapTrap " << _name
+                  << " can't repair himself: already dead" << std::endl;
         return;
+    }
+    if (_energy == 0)
+    {
+        std::cout << "ClapTrap " << _name
+                  << " can't repair himself: no enery point" << std::endl;
+        return;
+    }
     _health += amount;
     _energy -= 1;
-    std::cout << "ClapTrap " << _name << " has repaired himself and gets"
-              << amount << "points of health!" << std::endl;
+    std::cout << "ClapTrap " << _name << " repair himself, gainning " << amount
+              << " points of health!" << std::endl;
 }

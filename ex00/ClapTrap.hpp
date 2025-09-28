@@ -1,5 +1,7 @@
 #include <string>
 
+typedef unsigned int u_int;
+
 class ClapTrap
 {
   public:
@@ -15,8 +17,8 @@ class ClapTrap
     void beRepaired(unsigned int amount);
 
   private:
-    std::string  _name;
-    unsigned int _health;
-    unsigned int _energy;
-    unsigned int _attack;
+    std::string _name;
+    u_int       _health;
+    u_int       _energy;
+    u_int       _attack;
 };
