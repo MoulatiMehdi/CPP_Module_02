@@ -66,5 +66,5 @@ void ScavTrap::guardGate()
     if (_isGateKeeper)
         std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
     else
-        std::cout << "ScavTrap is now is not in Gate keeper mode" << std::endl;
+        std::cout << "ScavTrap is now in not in Gate keeper mode" << std::endl;
 }
