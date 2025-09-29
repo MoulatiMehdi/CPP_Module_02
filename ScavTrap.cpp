@@ -35,7 +35,7 @@ ScavTrap::~ScavTrap()
 ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
     std::cout << "ScavTrap Copy Assignement Operator called" << std::endl;
-    if (this != &other)
+    if (this == &other)
         return *this;
     ClapTrap::operator=(other);
     _isGateKeeper = other._isGateKeeper;
