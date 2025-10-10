@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap() : ClapTrap(), _isGateKeeper(false)
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "ScavTrap default Constrcutor called" << std::endl;
     this->_health = 100;
@@ -10,9 +10,7 @@ ScavTrap::ScavTrap() : ClapTrap(), _isGateKeeper(false)
     this->_attack = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &name)
-    : ClapTrap(name),
-      _isGateKeeper(false)
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "ScavTrap Parameter Constrcutor called" << std::endl;
     this->_health = 100;
@@ -20,9 +18,7 @@ ScavTrap::ScavTrap(const std::string &name)
     this->_attack = 20;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
-    : ClapTrap(other),
-      _isGateKeeper(other._isGateKeeper)
+ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
     std::cout << "ScavTrap Copy Constrcutor called" << std::endl;
 }
@@ -38,7 +34,6 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
     if (this == &other)
         return *this;
     ClapTrap::operator=(other);
-    _isGateKeeper = other._isGateKeeper;
     return *this;
 }
 
@@ -63,10 +58,6 @@ void ScavTrap::attack(const std::string &target)
 
 void ScavTrap::guardGate()
 {
-    if (_isGateKeeper)
-        std::cout << "ScavTrap " << _name << " is now in Gate keeper mode"
-                  << std::endl;
-    else
-        std::cout << "ScavTrap " << _name << " is not in Gate keeper mode"
-                  << std::endl;
+    std::cout << "ScavTrap " << _name << " is now in Gate keeper mode"
+              << std::endl;
 }
