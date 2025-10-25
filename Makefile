@@ -1,7 +1,7 @@
 CXX = c++ 
 RM = rm  
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow -g
 RMFLAGS = -rf
 
 

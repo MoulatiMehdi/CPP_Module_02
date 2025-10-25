@@ -11,6 +11,7 @@ DiamondTrap ::DiamondTrap()
       FragTrap(),
       _name("unknown")
 {
+    std::cout << "DiamondTrap default Constrcutor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
@@ -19,6 +20,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
       FragTrap(other),
       _name(other._name)
 {
+    std::cout << "DiamondTrap Copy Constrcutor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name)
@@ -27,10 +29,12 @@ DiamondTrap::DiamondTrap(const std::string &name)
       DiamondTrap::FragTrap(name),
       _name(name)
 {
+    std::cout << "DiamondTrap Parameter Constrcutor called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 {
+    std::cout << "DiamondTrap Copy Assignement Operator called" << std::endl;
     if (this == &other)
         return *this;
     _name = other._name;
@@ -42,7 +46,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
 
 DiamondTrap ::~DiamondTrap()
 {
-    std::cout << std::endl;
+    std::cout << "DiamondTrap Destructor called" << std::endl;
 }
 
 void DiamondTrap::whoAmI()
