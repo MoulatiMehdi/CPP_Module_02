@@ -1,12 +1,12 @@
 CXX = c++ 
 RM = rm  
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 RMFLAGS = -rf
 
 
-SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp 
-DEPS =  ClapTrap.hpp ScavTrap.hpp
+SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp FragTrap.cpp DiamondTrap.cpp 
+DEPS =  ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 NAME = run
 
 all : $(NAME)
