@@ -9,9 +9,9 @@
 /**********************************************************************************/
 /**********************************************************************************/
 
-ClapTrap::ClapTrap() : _name(""), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap() : _name("unknown"), _health(10), _energy(10), _attack(0)
 {
-    std::cout << "Default Constructor called" << std::endl;
+    std::cout << "ClapTrap Default Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(const std::string &name)
       _energy(10),
       _attack(0)
 {
-    std::cout << "Parameter constructor called" << std::endl;
+    std::cout << "ClapTrap Parameter constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other)
@@ -29,12 +29,12 @@ ClapTrap::ClapTrap(const ClapTrap &other)
       _energy(other._energy),
       _attack(other._attack)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "ClapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
 /**********************************************************************************/
@@ -45,7 +45,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-    std::cout << "Copy Assignement Operater is called" << std::endl;
+    std::cout << "ClapTrap Copy Assignement Operater is called" << std::endl;
     if (&other == this)
         return *this;
     _health = other._health;
@@ -65,14 +65,14 @@ void ClapTrap::attack(const std::string &target)
 {
     if (_health == 0)
     {
-        std::cout << "ClapTrap " << _name << " can't attack : already dead"
-                  << std::endl;
+        std::cout << "ClapTrap " << _name
+                  << " is not able to attack : already dead" << std::endl;
         return;
     }
     if (_energy == 0)
     {
-        std::cout << "ClapTrap " << _name << " can't attack : no enery point"
-                  << std::endl;
+        std::cout << "ClapTrap " << _name
+                  << " is not able to attack : no enery point" << std::endl;
         return;
     }
     _energy -= 1;
@@ -84,16 +84,16 @@ void ClapTrap::takeDamage(unsigned int amount)
 {
     if (_health == 0)
     {
-        std::cout << "ClapTrap " << _name << " can't take damage : already dead"
-                  << std::endl;
+        std::cout << "ClapTrap " << _name
+                  << " is not able to take damage : already dead" << std::endl;
         return;
     }
     if (_health > amount)
         _health -= amount;
     else
         _health = 0;
-    std::cout << "ClapTrap " << _name << " has been attacked , losing " << amount
-              << " points of health!" << std::endl;
+    std::cout << "ClapTrap " << _name << " has been attacked , losing "
+              << amount << " points of health!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -101,13 +101,15 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (_health == 0)
     {
         std::cout << "ClapTrap " << _name
-                  << " can't repair himself: already dead" << std::endl;
+                  << " is not able to repair himself: already dead"
+                  << std::endl;
         return;
     }
     if (_energy == 0)
     {
         std::cout << "ClapTrap " << _name
-                  << " can't repair himself: no enery point" << std::endl;
+                  << " is not able to repair himself: no enery point"
+                  << std::endl;
         return;
     }
     _health += amount;

@@ -1,3 +1,6 @@
+#ifndef CLAP_TRAP_HPP
+#define CLAP_TRAP_HPP
+
 #include <string>
 
 typedef unsigned int u_int;
@@ -8,9 +11,8 @@ class ClapTrap
     ClapTrap();
     ClapTrap(const std::string &name);
     ClapTrap(const ClapTrap &other);
-    ~ClapTrap();
-
     ClapTrap &operator=(const ClapTrap &other);
+    ~ClapTrap();
 
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
@@ -22,3 +24,5 @@ class ClapTrap
     u_int       _energy;
     u_int       _attack;
 };
+
+#endif
