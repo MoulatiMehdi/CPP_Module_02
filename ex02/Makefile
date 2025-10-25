@@ -5,8 +5,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 RMFLAGS = -rf
 
 
-SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp 
-DEPS =  ClapTrap.hpp ScavTrap.hpp
+SRCS = ClapTrap.cpp FragTrap.cpp main.cpp
+DEPS =  ClapTrap.hpp FragTrap.hpp
 NAME = run
 
 all : $(NAME)
