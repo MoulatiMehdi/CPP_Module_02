@@ -1,16 +1,16 @@
 #include "ClapTrap.hpp"
+#include <string>
 
 int main()
 {
+    ClapTrap tmp;
     ClapTrap a("bob");
-    ClapTrap b("jack");
+    ClapTrap tmp1 = a;
 
-    a.attack("unknown");
-    b.attack("unknown");
-    for (int i = 0; i < 10; i++)
-    {
-        a.beRepaired(5);
-        b.beRepaired(10);
-    }
+    tmp = a;
+
+    a.attack("jack");
+    a.takeDamage(1);
+    a.beRepaired(10);
     return 0;
 }
