@@ -5,17 +5,17 @@
 ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "ScavTrap default Constrcutor called" << std::endl;
-    this->_health = 100;
-    this->_energy = 50;
-    this->_attack = 20;
+    this->_health = HEALTH_POINT;
+    this->_energy = ENERGY_POINT;
+    this->_attack = ATTACK_POINT;
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "ScavTrap Parameter Constrcutor called" << std::endl;
-    this->_health = 100;
-    this->_energy = 50;
-    this->_attack = 20;
+    this->_health = HEALTH_POINT;
+    this->_energy = ENERGY_POINT;
+    this->_attack = ATTACK_POINT;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
