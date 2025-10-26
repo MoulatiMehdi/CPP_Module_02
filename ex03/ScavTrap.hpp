@@ -6,6 +6,11 @@
 
 class ScavTrap : virtual public ClapTrap
 {
+  protected:
+    static const u_int HEALTH_POINT = 100;
+    static const u_int ENERGY_POINT = 50;
+    static const u_int ATTACK_POINT = 20;
+
   public:
     ScavTrap();
     ScavTrap(const std::string &name);

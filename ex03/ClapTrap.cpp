@@ -9,16 +9,20 @@
 /**********************************************************************************/
 /**********************************************************************************/
 
-ClapTrap::ClapTrap() : _name("unknown"), _health(10), _energy(10), _attack(0)
+ClapTrap::ClapTrap()
+    : _name("unknown"),
+      _health(HEALTH_POINT),
+      _energy(ENERGY_POINT),
+      _attack(ATTACK_POINT)
 {
     std::cout << "ClapTrap Default Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const std::string &name)
     : _name(name),
-      _health(10),
-      _energy(10),
-      _attack(0)
+      _health(HEALTH_POINT),
+      _energy(ENERGY_POINT),
+      _attack(ATTACK_POINT)
 {
     std::cout << "ClapTrap Parameter constructor called" << std::endl;
 }

@@ -6,17 +6,17 @@
 FragTrap::FragTrap() : ClapTrap()
 {
     std::cout << "FragTrap Default Constructor called" << std::endl;
-    _energy = 100;
-    _health = 100;
-    _attack = 30;
+    _health = HEALTH_POINT;
+    _energy = ENERGY_POINT;
+    _attack = ATTACK_POINT;
 }
 
 FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
 {
     std::cout << "FragTrap Parameter Constructor called" << std::endl;
-    _energy = 100;
-    _health = 100;
-    _attack = 30;
+    _health = HEALTH_POINT;
+    _energy = ENERGY_POINT;
+    _attack = ATTACK_POINT;
 }
 
 FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
