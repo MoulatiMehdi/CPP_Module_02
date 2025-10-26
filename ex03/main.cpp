@@ -16,5 +16,11 @@ int main()
     b.whoAmI();
     c.whoAmI();
     std::cout << "-------------------" << std::endl;
+    a.attack("hello");
+    a.beRepaired(50);
+    a.guardGate();
+    a.highFivesGuys();
+    a.takeDamage(10);
+    std::cout << "-------------------" << std::endl;
     return 0;
 }
