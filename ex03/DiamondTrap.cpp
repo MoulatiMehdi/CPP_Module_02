@@ -30,7 +30,7 @@ DiamondTrap::DiamondTrap(const std::string &name)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ClapTrap(),
+    : ClapTrap(other),
       ScavTrap(other),
       FragTrap(other),
       _name(other._name)
