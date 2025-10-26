@@ -7,6 +7,11 @@ typedef unsigned int u_int;
 
 class ClapTrap
 {
+  protected:
+    static const u_int HEALTH_POINT = 10;
+    static const u_int ENERGY_POINT = 10;
+    static const u_int ATTACK_POINT = 0;
+
   public:
     ClapTrap();
     ClapTrap(const std::string &name);
