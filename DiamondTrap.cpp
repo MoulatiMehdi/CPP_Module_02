@@ -12,15 +12,9 @@ DiamondTrap ::DiamondTrap()
       _name("unknown")
 {
     std::cout << "DiamondTrap default Constrcutor called" << std::endl;
-}
-
-DiamondTrap::DiamondTrap(const DiamondTrap &other)
-    : ClapTrap(),
-      ScavTrap(other),
-      FragTrap(other),
-      _name(other._name)
-{
-    std::cout << "DiamondTrap Copy Constrcutor called" << std::endl;
+    _health = FragTrap::HEALTH_POINT;
+    _energy = ScavTrap::ENERGY_POINT;
+    _attack = FragTrap::ATTACK_POINT;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name)
@@ -30,6 +24,18 @@ DiamondTrap::DiamondTrap(const std::string &name)
       _name(name)
 {
     std::cout << "DiamondTrap Parameter Constrcutor called" << std::endl;
+    _health = FragTrap::HEALTH_POINT;
+    _energy = ScavTrap::ENERGY_POINT;
+    _attack = FragTrap::ATTACK_POINT;
+}
+
+DiamondTrap::DiamondTrap(const DiamondTrap &other)
+    : ClapTrap(),
+      ScavTrap(other),
+      FragTrap(other),
+      _name(other._name)
+{
+    std::cout << "DiamondTrap Copy Constrcutor called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other)
