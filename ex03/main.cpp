@@ -1,26 +1,47 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
+#include <string>
 
 int main()
 {
     DiamondTrap a("bob");
-    std::cout << "-------------------" << std::endl;
     DiamondTrap b = a;
-    std::cout << "-------------------" << std::endl;
     DiamondTrap c;
-    std::cout << "-------------------" << std::endl;
+
     b = a;
 
-    std::cout << "-------------------" << std::endl;
+    std::cout << std::string(50, '-') << std::endl;
+    ClapTrap *ct = &a;
+    FragTrap *ft = &a;
+    ScavTrap *st = &a;
+
     a.whoAmI();
-    b.whoAmI();
-    c.whoAmI();
-    std::cout << "-------------------" << std::endl;
+
+    std::cout << std::string(50, '-') << std::endl;
     a.attack("hello");
+    ct->attack("hello");
+    st->attack("hello");
+    ft->attack("hello");
+
+    std::cout << std::string(50, '-') << std::endl;
     a.beRepaired(50);
-    a.guardGate();
-    a.highFivesGuys();
+    ct->beRepaired(50);
+    st->beRepaired(50);
+    ft->beRepaired(50);
+
+    std::cout << std::string(50, '-') << std::endl;
     a.takeDamage(10);
-    std::cout << "-------------------" << std::endl;
+    ct->takeDamage(10);
+    st->takeDamage(10);
+    ft->takeDamage(10);
+
+    std::cout << std::string(50, '-') << std::endl;
+    a.guardGate();
+    st->guardGate();
+
+    std::cout << std::string(50, '-') << std::endl;
+    a.highFivesGuys();
+    ft->highFivesGuys();
+
     return 0;
 }
