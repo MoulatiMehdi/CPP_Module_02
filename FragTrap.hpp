@@ -6,6 +6,11 @@
 
 class FragTrap : public ClapTrap
 {
+  protected:
+    static const unsigned int HEALTH_POINT = 100;
+    static const unsigned int ENERGY_POINT = 100;
+    static const unsigned int ATTACK_POINT = 30;
+
   public:
     FragTrap();
     FragTrap(const FragTrap &other);
