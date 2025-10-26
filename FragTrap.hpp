@@ -7,9 +7,9 @@
 class FragTrap : public ClapTrap
 {
   protected:
-    static const unsigned int HEALTH_POINT = 100;
-    static const unsigned int ENERGY_POINT = 100;
-    static const unsigned int ATTACK_POINT = 30;
+    static const u_int HEALTH_POINT = 100;
+    static const u_int ENERGY_POINT = 100;
+    static const u_int ATTACK_POINT = 30;
 
   public:
     FragTrap();
